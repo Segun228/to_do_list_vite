@@ -30,12 +30,14 @@ function App() {
     }, [todos]
   )
 
-  const removeTask = () => {
-    
+  const removeTask = (id) => {
+    setTodos([...todos.filter((todo)=>todo.id !== id)])
+    console.log("task removed")
   }
 
-  const toggleTask = () => {
-    
+  const toggleTask = (id) => {
+    setTodos([...todos.map((todo)=> todo.id=== id ? {...todo, completed: !todo.completed} : {...todo})])
+    console.log("task toggled")
   }
 
   const handleChange = (e) => {
@@ -62,7 +64,7 @@ function App() {
         </form>
         <div className="task__list">
           {todos.map((todo)=>{
-            return(<CurrentTask key={uid()} taskText={todo.text} toggleTask={toggleTask} deleteTask={removeTask}></CurrentTask>);
+            return(<CurrentTask key={todo.id} id={todo.id} taskText={todo.text} toggleTask={toggleTask} removeTask={removeTask}></CurrentTask>);
           })}
         </div>
       </div>
