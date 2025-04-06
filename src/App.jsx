@@ -11,13 +11,30 @@ import axios from 'axios'
 function App() {
   const inputRef = useRef(null);
   const constraintsRef = useRef(null)
-
+  const myLink = "https://my-json-server.typicode.com/Segun228/dummy_api_data"
   useEffect(()=>{if (inputRef.current) {
     inputRef.current.focus();}
 }, [])
   const [todos, setTodos] = useState([])
   const [currentTodo, setCurrentTodo] = useState("");
   
+
+
+  useEffect(() => {
+    const fetchData = async () => { 
+      try {
+        const response = await axios.get('https://my-json-server.typicode.com/Segun228/dummy_api_data');
+        setTodos(response.data);
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error); 
+      }
+    };
+
+    fetchData();
+
+  }, []);
+
+
   const addTask = (currentTodo) => {
     if(currentTodo){
       const newElem = {
