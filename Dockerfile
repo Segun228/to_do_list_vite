@@ -9,7 +9,7 @@ RUN npm install uid
 RUN npm install axios
 RUN npm install random-color
 RUN npm install motion
-RUN npm install 
+RUN npm install uuid
 
 COPY . .
 
