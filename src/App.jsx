@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useRef } from 'react'
 import { uid } from 'uid'
 import randomColor from 'randomcolor'
 import './App.css'
 import CurrentTask from '../components/CurrentTask/CurrentTask';
+import {Reorder} from 'framer-motion'; 
+import axios from 'axios'
 
 function App() {
+  const inputRef = useRef(null);
+  const constraintsRef = useRef(null)
+
+  useEffect(()=>{if (inputRef.current) {
+    inputRef.current.focus();}
+}, [])
   const [todos, setTodos] = useState([])
   const [currentTodo, setCurrentTodo] = useState("");
+  
   const addTask = (currentTodo) => {
     if(currentTodo){
       const newElem = {
@@ -15,6 +25,7 @@ function App() {
         date : Date.now(),
         id : uid(),
         completed : false,
+        color: randomColor({luminosity: 'light',}),
       }
       setTodos([newElem, ...todos])
     }
@@ -53,18 +64,30 @@ function App() {
   return (
     <>
     <div className="App">
-      <div className='wrapper'>
-        <form onSubmit={handleSubmit}>
-        <input type="text" 
+      <div ref={constraintsRef} className='wrapper'>
+        <form className="task-form" onSubmit={handleSubmit}>
+        <input 
+        ref={inputRef}
+        className='task-input'
+        type="text" 
         placeholder="Enter task..."
         onChange={handleChange}
         value = {currentTodo}
         ></input>
-        <button >submit</button>
+        <button className='task-submit-button'>Submit</button>
         </form>
         <div className="task__list">
           {todos.map((todo)=>{
-            return(<CurrentTask key={todo.id} id={todo.id} taskText={todo.text} toggleTask={toggleTask} removeTask={removeTask}></CurrentTask>);
+            return(<CurrentTask 
+              
+              color={todo.color} 
+              todo={todo} 
+              key={todo.id} 
+              id={todo.id} 
+              taskText={todo.text} 
+              toggleTask={toggleTask} 
+              removeTask={removeTask}
+              ></CurrentTask>);
           })}
         </div>
       </div>
