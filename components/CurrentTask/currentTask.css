@@ -65,3 +65,120 @@
     transition: 0.2s ease-out;
 }
 
+@media(max-width: 600px){
+    .task-text{
+        font-size: 12px;
+        user-select: none;
+        max-width: 25vw;
+        cursor: pointer;
+        word-break: break-all;
+        margin-bottom: 2vh;
+    }
+    
+    .task-text-done{
+        font-size: 12px;
+        margin-bottom: 2vh;
+        word-break: break-all;
+        user-select: none;
+        cursor: pointer;
+        text-decoration:line-through;
+    }
+    .cancel__button{
+        cursor: pointer;
+        margin-bottom: 2vh;
+        width: calc(1.5*var(--index));
+        height: calc(1.5*var(--index));
+        transition: 0.3s ease-out;
+    }
+    
+    .cancel__button:hover{
+        margin-bottom: 2vh;
+        transform: scale(120%);
+        transition: 0.2s ease-out;
+    }
+}
+
+@media(max-width: 450px){
+    .task-container{
+        cursor:grab;
+        min-width: calc(5*var(--index));
+        max-width: calc(16*var(--index));
+        min-height: calc(3*var(--index));
+        padding: 2vh;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-radius: calc(0.6*var(--index));
+        transition: 0.3s ease-out;
+    
+    }
+}
+
+@media(max-width: 300px){
+    .task-text{
+        font-size: 10px;
+        user-select: none;
+        max-width: 25vw;
+        cursor: pointer;
+        word-break: break-all;
+        margin-bottom: 2vh;
+    }
+    
+    .task-text-done{
+        font-size: 10px;
+        margin-bottom: 2vh;
+        word-break: break-all;
+        user-select: none;
+        cursor: pointer;
+        text-decoration:line-through;
+    }
+
+    .task-container{
+        cursor:grab;
+        min-width: calc(4*var(--index));
+        max-width: calc(15*var(--index));
+        min-height: calc(3*var(--index));
+        padding: 2vh;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-radius: calc(0.6*var(--index));
+        transition: 0.3s ease-out;
+    
+    }
+    .cancel__button{
+        cursor: pointer;
+        margin-bottom: 2vh;
+        width: calc(1.5*var(--index));
+        height: calc(1.5*var(--index));
+        transition: 0.3s ease-out;
+    }
+    
+    .cancel__button:hover{
+        margin-bottom: 2vh;
+        transform: scale(120%);
+        transition: 0.2s ease-out;
+    }
+}
+
+@media(max-width: 220px){
+    .task-text{
+        font-size: 9px;
+        user-select: none;
+        max-width: 25vw;
+        cursor: pointer;
+        word-break: break-all;
+        margin-bottom: 2vh;
+    }
+    
+    .task-text-done{
+        font-size: 9px;
+        margin-bottom: 2vh;
+        word-break: break-all;
+        user-select: none;
+        cursor: pointer;
+        text-decoration:line-through;
+    }
+}

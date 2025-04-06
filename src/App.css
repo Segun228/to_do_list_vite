@@ -89,3 +89,9 @@
   align-content: center;
   row-gap: calc(0.6*var(--index));
 }
+
+@media(max-width: 260px){
+  .task-input{
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,37 @@
+[
+    {
+      "text": "Buy groceries for the week",
+      "date": "2024-01-03T10:00:00Z",
+      "id": "1",
+      "completed": false,
+      "color": "red"
+    },
+    {
+      "text": "Schedule a doctor's appointment",
+      "date": "2024-01-05T14:30:00Z",
+      "id": "2",
+      "completed": true,
+      "color": "green"
+    },
+    {
+      "text": "Pay the electricity bill",
+      "date": "2024-01-07T18:00:00Z",
+      "id": "3",
+      "completed": false,
+      "color": "yellow"
+    },
+    {
+      "text": "Read chapter 5 of the book",
+      "date": "2024-01-10T20:00:00Z",
+      "id": "4",
+      "completed": false,
+      "color": "blue"
+    },
+    {
+      "text": "Call Mom",
+      "date": "2024-01-12T16:00:00Z",
+      "id": "5",
+      "completed": false,
+      "color": "purple"
+    }
+  ]
