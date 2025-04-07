@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { uid } from 'uid'
 import randomColor from 'randomcolor'
 import './App.css'
-import CurrentTask from '../components/CurrentTask/CurrentTask';
+import CurrentTask from '../CurrentTask/CurrentTask';
 import {Reorder} from 'framer-motion'; 
 import axios from 'axios'
 
